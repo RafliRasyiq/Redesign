@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:redesign/detail/detail.dart';
+import 'package:redesign/screen/homescreen.dart';
 import 'constants.dart';
 
 void main() {
@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
           body2: TextStyle(color: ksecondaryColor),
         ),
       ),
-      home: DetailScreen(),
+      home: HomeScreen(),
     );
   }
 }
