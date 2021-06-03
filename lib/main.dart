@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:redesign/screen/detail/detail.dart';
 import 'package:redesign/screen/homescreen.dart';
-import 'constants.dart';
 
 void main() {
   runApp(MyApp());
@@ -14,11 +14,7 @@ class MyApp extends StatelessWidget {
       title: 'Aplikasi',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        scaffoldBackgroundColor: Colors.white,
-        textTheme: TextTheme(
-          body1: TextStyle(color: ksecondaryColor),
-          body2: TextStyle(color: ksecondaryColor),
-        ),
+        primarySwatch: Colors.blue,
       ),
       home: HomeScreen(),
     );
