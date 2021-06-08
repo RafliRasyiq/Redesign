@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:redesign/screen/detail/detail.dart';
-import 'package:redesign/widget/itemlist.dart';
+import 'package:redesign/widget/itemcard.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -98,7 +98,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     ),
                   ),
-                  ItemList(),
+                  CardAja(),
                 ],
               ),
             ),

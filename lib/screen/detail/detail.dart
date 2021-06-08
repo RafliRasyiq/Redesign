@@ -3,7 +3,7 @@ import 'package:redesign/constants.dart';
 import 'package:redesign/screen/homescreen.dart';
 import 'package:redesign/widget/detailitem.dart';
 import 'package:redesign/widget/detailitemcard.dart';
-import 'package:redesign/widget/itemcard.dart';
+
 import 'package:redesign/widget/member.dart';
 
 class DetailScreen extends StatelessWidget {

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:redesign/screen/detail/detail.dart';
 import 'package:redesign/screen/homescreen.dart';
 
 void main() {
