@@ -1,12 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:redesign/constants.dart';
 import 'package:redesign/screen/homescreen.dart';
-import 'package:redesign/widget/detailitem.dart';
 import 'package:redesign/widget/detailitemcard.dart';
-
 import 'package:redesign/widget/member.dart';
 
 class DetailScreen extends StatelessWidget {
+  final avatar;
+  final firstName;
+  final lastName;
+  final email;
+
+  const DetailScreen(
+      {Key key, this.avatar, this.firstName, this.lastName, this.email, value})
+      : super(key: key);
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
@@ -44,7 +50,77 @@ class DetailScreen extends StatelessWidget {
                 padding: const EdgeInsets.fromLTRB(0, 20, 0, 0),
                 child: Container(
                   child: Column(
-                    children: [Detail1()],
+                    children: [
+                      Container(
+                        child: Row(
+                          children: [
+                            Container(
+                              height: 70,
+                              width: 70,
+                              margin: EdgeInsets.only(
+                                left: 30,
+                              ),
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(40.0),
+                                  image: DecorationImage(
+                                    image: NetworkImage(
+                                      '$avatar'.toString(),
+                                    ),
+                                  ),
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: Colors.grey.withOpacity(0),
+                                      blurRadius: 20,
+                                      offset: Offset(0, 7),
+                                    )
+                                  ]),
+                            ),
+                            Container(
+                              margin: EdgeInsets.fromLTRB(20, 5, 10, 5),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Container(
+                                    margin: EdgeInsets.fromLTRB(10, 0, 10, 10),
+                                    child: Text(
+                                      '$firstName'.toString() +
+                                          " " +
+                                          '$lastName'.toString(),
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 25,
+                                        color: Colors.white,
+                                      ),
+                                    ),
+                                  ),
+                                  Container(
+                                    child: Row(
+                                      children: [
+                                        Padding(
+                                          padding: const EdgeInsets.fromLTRB(
+                                            10,
+                                            0,
+                                            0,
+                                            0,
+                                          ),
+                                          child: Text(
+                                            '$email'.toString(),
+                                            style: TextStyle(
+                                              color: Colors.white,
+                                              fontSize: 15,
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  )
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                      )
+                    ],
                   ),
                 ),
               ),
@@ -84,7 +160,7 @@ class DetailScreen extends StatelessWidget {
                             Padding(
                               padding: const EdgeInsets.fromLTRB(50, 0, 0, 0),
                               child: Text(
-                                "Members",
+                                "Followers",
                                 style: TextStyle(
                                   fontWeight: FontWeight.bold,
                                   fontSize: 22,
@@ -112,7 +188,7 @@ class DetailScreen extends StatelessWidget {
                               },
                               child: Center(
                                 child: Text(
-                                  "PLEASE RENT",
+                                  "FOLLOW NOW",
                                   style: TextStyle(
                                       color: Colors.white,
                                       fontWeight: FontWeight.bold),
@@ -127,25 +203,6 @@ class DetailScreen extends StatelessWidget {
             ],
           ),
         ),
-      ),
-    );
-  }
-}
-
-//Item di atas
-
-class Detail1 extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Column(
-        children: <Widget>[
-          CardAja1(
-            gambar: 'assets/images/instagram.jpg',
-            judul: 'Instagram',
-            bintang: '4.5',
-          ),
-        ],
       ),
     );
   }

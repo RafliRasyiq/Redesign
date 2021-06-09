@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
-
 import 'package:redesign/screen/detail/detail.dart';
 
 class CardAja extends StatefulWidget {
@@ -108,7 +107,12 @@ class _CardAjaState extends State<CardAja> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (c) => DetailScreen(),
+                  builder: (c) => DetailScreen(
+                    avatar: itemApi[index]['avatar'],
+                    firstName: itemApi[index]['first_name'],
+                    lastName: itemApi[index]['last_name'],
+                    email: itemApi[index]['email'],
+                  ),
                 ),
               );
             },
